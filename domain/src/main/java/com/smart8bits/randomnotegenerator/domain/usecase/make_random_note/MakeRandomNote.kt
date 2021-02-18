@@ -6,9 +6,9 @@ import kotlin.random.Random
 
 class MakeRandomNote(
     coroutineContext: CoroutineContext
-): UseCaseNoParams<Char>(coroutineContext) {
-    override suspend fun buildUseCase(): Char {
-        val notesArray = arrayOf('a', 'b', 'c')
+) : UseCaseNoParams<String>(coroutineContext) {
+    override suspend fun buildUseCase(): String {
+        val notesArray = arrayOf("C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B")
         return notesArray[Random.nextInt(notesArray.size)]
     }
 }
