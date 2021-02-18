@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View" />
 
         <variable
             name="viewModel"
@@ -21,6 +22,7 @@
             android:layout_centerInParent="true"
             android:text="@{viewModel.randomNote}"
             android:textSize="150sp"
+            android:id="@+id/txtViwNote"
             tools:text="C" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
@@ -28,6 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="@={viewModel.hasEven}"
+            android:onClick="@{() -> viewModel.makeRandomNote()}"
             android:text="@string/has_even" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
@@ -36,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/chkBxHasEven"
             android:checked="@={viewModel.hasFlat}"
+            android:onClick="@{() -> viewModel.makeRandomNote()}"
             android:text="@string/has_flat" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
@@ -43,8 +47,25 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/hasFlat"
             android:checked="@={viewModel.hasSharp}"
+            android:onClick="@{() -> viewModel.makeRandomNote()}"
             android:text="@string/has_sharp" />
 
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_toEndOf="@id/chkBxHasEven"
+            android:checked="@={viewModel.isRandomOctaveIncluded}"
+            android:text="@string/random_octave" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/txtViwNote"
+            android:layout_toEndOf="@+id/txtViwNote"
+            android:text="@{viewModel.randomOctave}"
+            android:textSize="50sp"
+            android:visibility="@{viewModel.isRandomOctaveIncluded() ? View.VISIBLE : View.GONE}"
+            tools:text="3" />
     </RelativeLayout>
 </layout>

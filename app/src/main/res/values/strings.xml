@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">RandomNoteGenerator</string>
-    <string name="has_even">Has Even</string>
-    <string name="has_flat">Has Flat</string>
-    <string name="has_sharp">Has Sharp</string>
+    <string name="has_even">Even</string>
+    <string name="has_flat">Flat</string>
+    <string name="has_sharp">Sharp</string>
+    <string name="random_octave">Octave</string>
 </resources>
