@@ -23,5 +23,28 @@
             android:textSize="150sp"
             tools:text="C" />
 
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/chkBxHasEven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@={viewModel.hasEven}"
+            android:text="@string/has_even" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/hasFlat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chkBxHasEven"
+            android:checked="@={viewModel.hasFlat}"
+            android:text="@string/has_flat" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hasFlat"
+            android:checked="@={viewModel.hasSharp}"
+            android:text="@string/has_sharp" />
+
+
     </RelativeLayout>
 </layout>
